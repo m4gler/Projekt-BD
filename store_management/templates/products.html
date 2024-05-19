@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <div>
+        <h2>Product List</h2>
+        <ul>
+            {% for product in products %}
+                <li>{{ product.RodzajeProduktow }} - {{ product.marka }} - {{ product.Cena }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h2>Add Product</h2>
+    <form action="/api/products" method="POST">
+        <input type="text" name="RodzajeProduktow" placeholder="Product Type" required>
+        <input type="number" name="rozmiar" step="0.01" placeholder="Size" required>
+        <input type="text" name="marka" placeholder="Brand" required>
+        <input type="text" name="DostepnoscProduktu" placeholder="Availability" required>
+        <input type="number" name="Cena" step="0.01" placeholder="Price" required>
+        <input type="text" name="Opis" placeholder="Description" required>
+        <input type="text" name="Opinie" placeholder="Reviews">
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Update Product</h2>
+    <form action="/api/products" method="PUT">
+        <input type="number" name="Id_Produktu" placeholder="Product ID" required>
+        <input type="text" name="RodzajeProduktow" placeholder="Product Type" required>
+        <input type="number" name="rozmiar" step="0.01" placeholder="Size" required>
+        <input type="text" name="marka" placeholder="Brand" required>
+        <input type="text" name="DostepnoscProduktu" placeholder="Availability" required>
+        <input type="number" name="Cena" step="0.01" placeholder="Price" required>
+        <input type="text" name="Opis" placeholder="Description" required>
+        <input type="text" name="Opinie" placeholder="Reviews">
+        <button type="submit">Update Product</button>
+    </form>
+
+    <h2>Delete Product</h2>
+    <form action="/api/products" method="DELETE">
+        <input type="number" name="id" placeholder="Product ID" required>
+        <button type="submit">Delete Product</button>
+    </form>
+
+    <br>
+    <a href="/"><button>Back to Home</button></a>
+</body>
+</html>
