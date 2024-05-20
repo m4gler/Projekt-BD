@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj Zamówienie</title>
+</head>
+<body>
+    <h1>Dodaj Zamówienie</h1>
+    <form action="{{ url_for('dodaj_zamowienie') }}" method="post">
+        <label for="id_zamowienia">ID Zamówienia:</label>
+        <input type="text" id="id_zamowienia" name="id_zamowienia" required>
+        <br>
+        <label for="id_klienta">ID Klienta:</label>
+        <input type="text" id="id_klienta" name="id_klienta" required>
+        <br>
+        <label for="zamowiony_produkt">Zamówiony Produkt:</label>
+        <input type="text" id="zamowiony_produkt" name="zamowiony_produkt" required>
+        <br>
+        <label for="wartosc_zamowienia">Wartość Zamówienia:</label>
+        <input type="text" id="wartosc_zamowienia" name="wartosc_zamowienia" required>
+        <br>
+        <label for="status_zamowienia">Status Zamówienia:</label>
+        <input type="text" id="status_zamowienia" name="status_zamowienia" required>
+        <br>
+        <button type="submit">Dodaj</button>
+    </form>
+    <a href="{{ url_for('index') }}">Powrót do strony głównej</a>
+</body>
+</html>
