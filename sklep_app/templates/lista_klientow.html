@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Klientów</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista Klientów</h1>
+        <ul>
+            {% for klient in klienci %}
+            <li>{{ klient.Imie }} {{ klient.Nazwisko }} - {{ klient.email }} - {{ klient.Telefon }} - {{ klient.AdresKlienta }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}">Powrót do strony głównej</a>
+    </div>
+</body>
+</html>

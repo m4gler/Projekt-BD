@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Zamówień</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista Zamówień</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Zamówienia</th>
+                    <th>ID Klienta</th>
+                    <th>Zamówiony Produkt</th>
+                    <th>Wartość Zamówienia</th>
+                    <th>Status Zamówienia</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for zamowienie in zamowienia %}
+                    <tr>
+                        <td>{{ zamowienie.Id_zamowienia }}</td>
+                        <td>{{ zamowienie.Id_klienta }}</td>
+                        <td>{{ zamowienie.ZamowionyProdukt }}</td>
+                        <td>{{ zamowienie.WartoscZamowienia }}</td>
+                        <td>{{ zamowienie.StatusZamowienia }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('index') }}">Powrót do strony głównej</a>
+    </div>
+</body>
+</html>
