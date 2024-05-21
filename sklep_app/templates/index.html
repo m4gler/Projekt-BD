@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona Główna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Witaj w Sklepie</h1>
+        <ul>
+            <li><a href="{{ url_for('lista_klientow') }}">Lista Klientów</a></li>
+            <li><a href="{{ url_for('lista_pracownikow') }}">Lista Pracowników</a></li>
+            <li><a href="{{ url_for('lista_zamowien') }}">Lista Zamówień</a></li>
+            <li><a href="{{ url_for('dodaj_zamowienie') }}">Dodaj Zamówienie</a></li>
+        </ul>
+    </div>
+</body>
+</html>
